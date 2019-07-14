@@ -40,12 +40,15 @@ KAPPresetManager::~KAPPresetManager()
 
 void KAPPresetManager::getXmlForPreset(XmlElement* inElement)
 {
-	//retrieve the parameters from the audio processor and populate the XML Element with them
-	const int numParameters = mProcessor->getNumParameters();
+	auto& parameters = mProcessor->getParameters();
 
-	for (int i = 0; i < numParameters; i++) {
-		inElement->setAttribute(mProcessor->getParameterName(i),
-								mProcessor->getParameter(i));
+	for (int i = 0; i < parameters.size(); i++) {
+		
+		AudioProcessorParameterWithID* parameter =
+		(AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+		
+		inElement->setAttribute(parameter->paramID,
+								parameter->getValue());
 	};
 }
 
@@ -53,21 +56,25 @@ void KAPPresetManager::loadPresetForXml(XmlElement* inElement)
 {
 	mCurrentPresetXml = inElement;
 
-	//retrieve the parameters and their values from the XML Element
-	const int numParameters = mProcessor->getNumParameters();
+	auto& parameters = mProcessor->getParameters();
 	
 	//iterate over the parameter list and get the name and value
-	for (int i = 0; i < numParameters; i++) {
+	for (int i = 0; i < mCurrentPresetXml->getNumAttributes(); i++) {
+		
 		const String name = mCurrentPresetXml->getAttributeName(i);
 		const float value = mCurrentPresetXml->getDoubleAttribute(name);
 
 		//find the parameter of the same name in the processor
 		//when the matching name is found, the value is passed to the parameter
-for (int j = 0; j < mProcessor->getNumParameters(); j++) {
-	if (mProcessor->getParameterName(j) == name) {
-		mProcessor->setParameterNotifyingHost(j, value);
-	};
-};
+		for (int j = 0; j < mProcessor->getNumParameters(); j++) {
+			
+			AudioProcessorParameterWithID* parameter =
+			(AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+			
+			if (name == parameter->paramID) {
+				parameter->setValueNotifyingHost(value);
+			};
+		};
 	}
 }
 
@@ -83,10 +90,16 @@ String KAPPresetManager::getPresetName(int inPresetIndex)
 
 void KAPPresetManager::createNewPreset()
 {
-	const int numParameters = mProcessor->getNumParameters();
+	auto& parameters = mProcessor->getParameters();
 
-	for (int i = 0; i < numParameters; i++) {
-		mProcessor->setParameterNotifyingHost(i, mProcessor->getParameterDefaultValue(i));
+	for (int i = 0; i < parameters.size(); i++) {
+		
+		AudioProcessorParameterWithID* parameter =
+		(AudioProcessorParameterWithID*)parameters.getUnchecked(i);
+
+		const float defaultValue = parameter->getDefaultValue();
+		
+		parameter->setValueNotifyingHost(defaultValue);
 	}
 
 	mCurrentPresetIsSaved = false;
@@ -141,7 +154,7 @@ void KAPPresetManager::loadPreset(int inPresetIndex)
 		mCurrentPresetIsSaved = true;
 		mCurrentPresetName = getPresetName(inPresetIndex);
 		mProcessor->setStateInformation(presetBinary.getData(),
-			presetBinary.getSize());
+		presetBinary.getSize());
 	}
 }
 

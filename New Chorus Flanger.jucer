@@ -3,6 +3,10 @@
 <JUCERPROJECT id="Szg5Om" name="New Chorus Flanger" projectType="audioplug"
               jucerVersion="5.4.3">
   <MAINGROUP id="ugkw4V" name="New Chorus Flanger">
+    <GROUP id="{8F7A34FA-FCC0-5634-A13F-E79B47F76CC5}" name="Components">
+      <FILE id="mpIsT7" name="KAPVUMeter.cpp" compile="1" resource="0" file="Source/KAPVUMeter.cpp"/>
+      <FILE id="wgmKJO" name="KAPVUMeter.h" compile="0" resource="0" file="Source/KAPVUMeter.h"/>
+    </GROUP>
     <GROUP id="{32C6BD33-AFB9-2B15-63A5-8BF59A6C3B68}" name="Managers">
       <FILE id="LmBfh4" name="KAPPresetManager.cpp" compile="1" resource="0"
             file="Source/KAPPresetManager.cpp"/>
@@ -51,6 +55,8 @@
             file="Source/KAPHelperFunctions.h"/>
       <FILE id="wW2mCy" name="KAPInterfaceDefines.h" compile="0" resource="0"
             file="Source/KAPInterfaceDefines.h"/>
+      <FILE id="cYBhDK" name="KAPLookAndFeel.h" compile="0" resource="0"
+            file="Source/KAPLookAndFeel.h"/>
       <FILE id="wKnTOJ" name="KAPParameters.h" compile="0" resource="0" file="Source/KAPParameters.h"/>
     </GROUP>
     <GROUP id="{B33AD5E7-D5F3-77A5-82DB-812F66CDE81F}" name="DSP">
@@ -69,6 +75,11 @@
       <FILE id="KEziSG" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="ipU8xV" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{8C7BE904-645E-A6C6-16A2-59D8748D733B}" name="Assets">
+      <FILE id="CT3703" name="kadenze_bg.png" compile="0" resource="1" file="Assets/Assets/kadenze_bg.png"/>
+      <FILE id="dVrJRL" name="kadenze_knob.png" compile="0" resource="1"
+            file="Assets/Assets/kadenze_knob.png"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

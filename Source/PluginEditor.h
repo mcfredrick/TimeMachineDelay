@@ -14,6 +14,7 @@
 #include "PluginProcessor.h"
 
 #include "KAPMainPanel.h"
+#include "KAPLookAndFeel.h"
 
 //==============================================================================
 /**
@@ -34,6 +35,9 @@ private:
     NewChorusFlangerAudioProcessor& processor;
 
 	ScopedPointer<KAPMainPanel> mMainPanel;
+	ScopedPointer<KAPLookAndFeel> mLookAndFeel;
+
+	Image mBackgroundImage;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewChorusFlangerAudioProcessorEditor)
 };

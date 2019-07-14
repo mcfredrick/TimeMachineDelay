@@ -18,7 +18,8 @@ class KAPParameterSlider
 public:
 
 	KAPParameterSlider(AudioProcessorValueTreeState& stateToControl,
-					   const String& parameterID);
+					   const String& parameterID,
+					   const String& parameterLabel);
 
 	~KAPParameterSlider();
 

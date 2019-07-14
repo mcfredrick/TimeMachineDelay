@@ -51,14 +51,15 @@ void KAPDelay::process(float* inAudio,
 	//inType initializes to 0.5 by default
 	//casting it to an int truncates the value
 	//without this workaround, you had to select delay explicitly in the combo box before feedback would be introduced
-	inType = (int)inType;
+
 	DBG("inType" << (String)inType);
 	const float wet = inWetDry;
 	const float dry = 1.0f - wet;
 	//when the delay type is set to "Delay", map the feedback parameter to the specified range
 	//otherwise, (in "Chorus" mode) the feedback parameter will always be 0.
 	const float feedbackMapped = 
-		(inType==kKAPDelayType_Delay) ? jmap(inFeedback, 0.0f, 1.0f, 0.0f, 1.20f) : 0.f;
+		//inType must be cast to an int to evaluate correctly here
+		((int)inType==kKAPDelayType_Delay) ? jmap(inFeedback, 0.0f, 1.0f, 0.0f, 1.20f) : 0.f;
 
 	for (int i = 0; i < inNumSamplesToRender; i++) {
 		

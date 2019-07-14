@@ -62,7 +62,12 @@ void KAPTopPanel::paint(Graphics& g)
 {
 	KAPPanelBase::paint(g);
 
-	g.drawFittedText("Kadenze Audio Plugin", 0, 0, getWidth()-10, getHeight(), Justification::centredRight, 1);
+	g.setColour(KAPColour_1);
+	g.setFont(font_2);
+
+	const int label_w = 220;
+
+	g.drawFittedText("Kadenze Audio Plugin", TOP_PANEL_WIDTH-label_w-10, 0, label_w, getHeight(), Justification::centredRight, 1);
 }
 
 void KAPTopPanel::buttonClicked(Button* b)

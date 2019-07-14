@@ -59,11 +59,14 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+	float getInputGainMeterLevel(int inChannel);
+	float getOutputGainMeterLevel(int inChannel);
+
 	AudioProcessorValueTreeState parameters;
 
 	KAPPresetManager* getPresetManager()
 	{
-		return mPresetManager;
+		return mPresetManager.get();
 	}
 
 private:
@@ -74,14 +77,16 @@ private:
 	//internal
 	void initializeParameters();
 
-	ScopedPointer<KAPGain> mInputGain[2];
-	ScopedPointer<KAPGain> mOutputGain[2];
-	ScopedPointer<KAPDelay> mDelay[2];
-	ScopedPointer<KAPLFO> mLFO[2];
+	AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
-	ScopedPointer<KAPPresetManager> mPresetManager;
+	std::unique_ptr<KAPGain> mInputGain[2];
+	std::unique_ptr<KAPGain> mOutputGain[2];
+	std::unique_ptr<KAPDelay> mDelay[2];
+	std::unique_ptr<KAPLFO> mLFO[2];
 
-	//JUCE's ScopedPointer Class uses std::unique_ptr<KAPGain> mInputGain[2];
+	std::unique_ptr<KAPPresetManager> mPresetManager;
+
+	//JUCE's ScopedPointer Class uses std::unique_ptr<>
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewChorusFlangerAudioProcessor)
 };

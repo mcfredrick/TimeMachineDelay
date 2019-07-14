@@ -34,26 +34,32 @@ void KAPEffectsPanel::paint(Graphics& g)
 {
 	KAPPanelBase::paint(g);
 
+	String label;
+
 	switch (mStyle)
 	{
-	case(kKAPEffectsPanelStyle_Delay): {
+		case(kKAPEffectsPanelStyle_Delay): {
 
-		g.drawFittedText("Delay", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
-	}break;
+			label = "Delay";
+		}break;
 
-	case(kKAPEffectsPanelStyle_Chorus): {
+		case(kKAPEffectsPanelStyle_Chorus): {
 
-		g.drawFittedText("Chorus", 0, 0, getWidth(), getHeight() * 0.75, Justification::centred, 1);
-	}break;
+			label = "Chorus";
+		}break;
+		
+		default:
+		case(kKAPEffectsPanelStyle_TotalNumStyles): {
 
-	default: //if the type is undefined
-	case(kKAPEffectsPanelStyle_TotalNumStyles): {
-		//this shouldn't happen!
-		g.drawFittedText("NO! Run Away!", 0, 0, getWidth(), getHeight(), Justification::centred, 1);
-		jassertfalse;
-	}break;
+			jassertfalse;
+		}break;
 
 	}
+
+	g.setColour(KAPColour_5);
+	g.setFont(font_3);
+
+	g.drawText(label, 0, 0, getWidth(), 80, Justification::centred, 1);
 
 	//paint labels
 	for (int i = 0; i < mSliders.size(); i++) {
@@ -77,7 +83,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 	case(kKAPEffectsPanelStyle_Delay): {
 
 		//construct the slider
-		KAPParameterSlider* time = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayTime]);
+		KAPParameterSlider* time = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayTime], KAPParameterLabel[kParameter_DelayTime]);
 		time->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(time);
@@ -88,7 +94,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 
 
 		//construct the slider
-		KAPParameterSlider* feedback = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayFeedback]);
+		KAPParameterSlider* feedback = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayFeedback], KAPParameterLabel[kParameter_DelayFeedback]);
 		feedback->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(feedback);
@@ -98,7 +104,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 		x = x + (slider_size * 2);
 
 		//construct the slider
-		KAPParameterSlider* wetdry = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayWetDry]);
+		KAPParameterSlider* wetdry = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayWetDry], KAPParameterLabel[kParameter_DelayWetDry]);
 		wetdry->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(wetdry);
@@ -112,7 +118,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 	case(kKAPEffectsPanelStyle_Chorus): {
 
 		//construct the slider
-		KAPParameterSlider* rate = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_ModulationRate]);
+		KAPParameterSlider* rate = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_ModulationRate], KAPParameterLabel[kParameter_ModulationRate]);
 		rate->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(rate);
@@ -122,7 +128,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 		x = x + (slider_size * 2);
 
 		//construct the slider
-		KAPParameterSlider* depth = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_ModulationDepth]);
+		KAPParameterSlider* depth = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_ModulationDepth], KAPParameterLabel[kParameter_ModulationDepth]);
 		depth->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(depth);
@@ -132,7 +138,7 @@ void KAPEffectsPanel::setEffectsPanelStyle(KAPEffectsPanelStyle inStyle)
 		x = x + (slider_size * 2);
 
 		//construct the slider
-		KAPParameterSlider* wetdry = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayWetDry]);
+		KAPParameterSlider* wetdry = new KAPParameterSlider(mProcessor->parameters, KAPParameterID[kParameter_DelayWetDry], KAPParameterLabel[kParameter_DelayWetDry]);
 		wetdry->setBounds(x, y, slider_size, slider_size);
 		//add to the parent and make visible
 		addAndMakeVisible(wetdry);

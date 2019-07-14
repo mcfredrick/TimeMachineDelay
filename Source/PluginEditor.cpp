@@ -11,6 +11,8 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+#include "KAPLookAndFeel.h"
+
 //==============================================================================
 NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewChorusFlangerAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
@@ -23,6 +25,15 @@ NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewC
 	mMainPanel = new KAPMainPanel(&processor);
 	addAndMakeVisible(mMainPanel);
 	
+	//set the lookAndFeel for the editor
+	mLookAndFeel = new KAPLookAndFeel();
+	setLookAndFeel(mLookAndFeel);
+
+	//set the default lookAndFeel for the program to the custom lookAndFeel
+	LookAndFeel::setDefaultLookAndFeel(mLookAndFeel);
+
+	mBackgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
+
 }
 
 NewChorusFlangerAudioProcessorEditor::~NewChorusFlangerAudioProcessorEditor()
@@ -33,11 +44,7 @@ NewChorusFlangerAudioProcessorEditor::~NewChorusFlangerAudioProcessorEditor()
 void NewChorusFlangerAudioProcessorEditor::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
-
-    g.setColour (Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
+	g.drawImage(mBackgroundImage, getLocalBounds().toFloat());
 }
 
 void NewChorusFlangerAudioProcessorEditor::resized()

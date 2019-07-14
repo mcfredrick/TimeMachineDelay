@@ -16,12 +16,16 @@
 #include "KAPInterfaceDefines.h"
 
 class KAPPanelBase
-	:public Component
+	:	public Component
 {
 public:
 
 	KAPPanelBase(NewChorusFlangerAudioProcessor* inProcessor);
 	~KAPPanelBase();
+
+	void mouseEnter (const MouseEvent& event) override;
+
+	void mouseExit(const MouseEvent& event) override;
 
 	void paint(Graphics& g) override;
 

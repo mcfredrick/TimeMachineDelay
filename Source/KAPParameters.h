@@ -34,3 +34,27 @@ static String KAPParameterID[kParameter_TotalNumParameters] =
 	"ModulationRate",
 	"ModulationDepth",
 };
+
+static String KAPParameterLabel[kParameter_TotalNumParameters] =
+{
+	"Input Gain",
+	"Time",
+	"Feedback",
+	"Wet Dry",
+	"Type",
+	"Output Gain",
+	"Modulation Rate",
+	"Modulation Depth",
+};
+
+static float KAPParameterDefaultValue[kParameter_TotalNumParameters] =
+{
+	0.5f, //Input Gain
+	0.5f, //Time
+	0.5f, //Feedback
+	0.5f, //Wet Dry
+	0.0f, //Type
+	0.5f, //Output Gain
+	0.5f, //Modulation Rate
+	0.5f, //Modulation Depth
+};

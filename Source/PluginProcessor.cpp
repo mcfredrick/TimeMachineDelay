@@ -11,6 +11,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include "KAPParameters.h"
+#include "JuceHeader.h"
 
 //==============================================================================
 NewChorusFlangerAudioProcessor::NewChorusFlangerAudioProcessor()
@@ -23,12 +24,15 @@ NewChorusFlangerAudioProcessor::NewChorusFlangerAudioProcessor()
                        .withOutput ("Output", AudioChannelSet::stereo(), true)
                      #endif
                        ),
-		parameters(*this, nullptr) //can replace nullptr with pointer to an undo manager juce object
+		parameters(*this,						//reference to processor
+					nullptr,					//nullptr to undoManager (optional)
+					juce::Identifier("KAP"),	//valueTree identifier
+					createParameterLayout()	)	//intialize parameters
 #endif
 {
-	initializeParameters(); //set up the parameter tree in the audio processor
+	//initializeParameters(); //set up the parameter tree in the audio processor - overriden by createParameterLayout()
 	initializeDSP(); //initialize DSP blocks
-	mPresetManager = new KAPPresetManager(this); //intitialize the preset manager passign a pointer to this audio processor
+	mPresetManager = std::make_unique<KAPPresetManager>(this); //intitialize the preset manager passign a pointer to this audio processor
 }
 
 NewChorusFlangerAudioProcessor::~NewChorusFlangerAudioProcessor()
@@ -171,31 +175,42 @@ void NewChorusFlangerAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 
         // ..do something to the data...
 
-		mInputGain[channel]->process(channelData, //inAudio
-								getParameter(kParameter_InputGain),		 //gain parameter
-								channelData, //outAudio
+		float inputGain = *parameters.getRawParameterValue(KAPParameterID[kParameter_InputGain]);
+
+		mInputGain[channel]->process(channelData,		 //inAudio
+								inputGain,				 //gain parameter
+								channelData,			 //outAudio
 								buffer.getNumSamples()); //number of samples to render
 		
 		//turn delay into chorus by adding an LFO to one channel
-		float rate = channel==0 ? getParameter(kParameter_ModulationRate): 0; //apply modulation to channel 0 (left) and set rate to 0 for channel 1 (right)
+		float rate = channel==0 ? *parameters.getRawParameterValue(KAPParameterID[kParameter_ModulationRate]): 0; //apply modulation to channel 0 (left) and set rate to 0 for channel 1 (right)
 
-		mLFO[channel]->process(rate, //rate
-							   getParameter(kParameter_ModulationDepth), //depth
+		float depth = *parameters.getRawParameterValue(KAPParameterID[kParameter_ModulationDepth]);
+
+		mLFO[channel]->process(rate,					//rate
+							   depth,					//depth
 							   buffer.getNumSamples()); //number of samples to render
 
-		mDelay[channel]->process(channelData, //inAudio
-								 getParameter(kParameter_DelayTime), //inTime
-								 getParameter(kParameter_DelayFeedback),  //inFeedback
-								 getParameter(kParameter_DelayWetDry), //inWetDry
-								 getParameter(kParameter_DelayType), //inType
+		float delayTime = *parameters.getRawParameterValue(KAPParameterID[kParameter_DelayTime]);
+		float delayFeedback = *parameters.getRawParameterValue(KAPParameterID[kParameter_DelayFeedback]);
+		float delayWetDry = *parameters.getRawParameterValue(KAPParameterID[kParameter_DelayWetDry]);
+		float delayType = *parameters.getRawParameterValue(KAPParameterID[kParameter_DelayType]);
+
+		mDelay[channel]->process(channelData,				 //inAudio
+								 delayTime,					 //inTime
+								 delayFeedback,				 //inFeedback
+								 delayWetDry,				 //inWetDry
+								 delayType,					 //inType
 								 mLFO[channel]->getBuffer(), //modulation buffer
-								 channelData, //outAudio
-								 buffer.getNumSamples()); //number of samples to render
+								 channelData,				 //outAudio
+								 buffer.getNumSamples());	 //number of samples to render
 		
-		mOutputGain[channel]->process(channelData, //inAudio
-								getParameter(kParameter_OutputGain),		 //gain parameter
-								channelData, //outAudio
-								buffer.getNumSamples()); //number of samples to render
+		float outputGain = *parameters.getRawParameterValue(KAPParameterID[kParameter_OutputGain]);
+
+		mOutputGain[channel]->process(channelData,			 //inAudio
+								outputGain,					 //gain parameter
+								channelData,				 //outAudio
+								buffer.getNumSamples());	 //number of samples to render
 
     }
 }
@@ -236,9 +251,10 @@ void NewChorusFlangerAudioProcessor::setStateInformation (const void* data, int 
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
-
+	
+	std::unique_ptr<XmlElement> xmlState;
 	//create an XML Element from the raw data passed
-	XmlElement* xmlState = getXmlFromBinary(data, sizeInBytes);
+	xmlState.reset(getXmlFromBinary(data, sizeInBytes));
 
 	//make sure the xmlState is not a nullptr and stop if it doesn't exist
 	if (xmlState) {
@@ -252,27 +268,43 @@ void NewChorusFlangerAudioProcessor::setStateInformation (const void* data, int 
 	}
 }
 
+float  NewChorusFlangerAudioProcessor::getInputGainMeterLevel(int inChannel)
+{
+
+	const float normalizeddB = dBToNormalizedGain(mInputGain[inChannel]->getMeterLevel());
+	return normalizeddB;
+}
+
+float  NewChorusFlangerAudioProcessor::getOutputGainMeterLevel(int inChannel)
+{
+	const float normalizeddB = dBToNormalizedGain(mOutputGain[inChannel]->getMeterLevel());
+	return normalizeddB;
+}
+
 void NewChorusFlangerAudioProcessor::initializeDSP()
 {
 	//iterate through each channel - currently set up for stereo 
 	for (int i = 0; i < 2; i++) {
 
 		//create new instances of each DSP object
-		mInputGain[i] = new KAPGain();
-		mOutputGain[i] = new KAPGain();
-		mDelay[i] = new KAPDelay();
-		mLFO[i] = new KAPLFO();
+		mInputGain[i] = std::make_unique<KAPGain>();
+		mOutputGain[i] = std::make_unique <KAPGain>();
+		mDelay[i] = std::make_unique <KAPDelay>();
+		mLFO[i] = std::make_unique <KAPLFO>();
 	};
 }
+
+/* 
+//This method is overriden by createParameterLayout()
 
 void NewChorusFlangerAudioProcessor::initializeParameters()
 {	//add each of the needed parameters to the AudioProcessor
 	for (int i = 0; i < kParameter_TotalNumParameters; i++) {
 		parameters.createAndAddParameter(KAPParameterID[i],
 			KAPParameterID[i],
-			KAPParameterID[i],
+			KAPParameterLabel[i],
 			NormalisableRange<float>(0.0f, 1.0f),
-			0.5f,
+			KAPParameterDefaultValue[i],
 			nullptr,
 			nullptr);
 
@@ -281,9 +313,24 @@ void NewChorusFlangerAudioProcessor::initializeParameters()
 		//parameters.state = ValueTree(KAPParameterID[i]);
 	};
 
-
+	parameters.state = ValueTree(Identifier("KAP"));
 }
+*/
 
+AudioProcessorValueTreeState::ParameterLayout NewChorusFlangerAudioProcessor::createParameterLayout()
+{
+	std::vector<std::unique_ptr<AudioParameterFloat>> params;
+
+	for (int i = 0; i < kParameter_TotalNumParameters; i++) {
+
+		params.push_back(std::make_unique<AudioParameterFloat>(KAPParameterID[i],
+			KAPParameterLabel[i],
+			NormalisableRange<float>(0.0f, 1.0f),
+			KAPParameterDefaultValue[i]));
+	}
+
+	return { params.begin(), params.end() };
+}
 
 //==============================================================================
 // This creates new instances of the plugin..
