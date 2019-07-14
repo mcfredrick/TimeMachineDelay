@@ -37,10 +37,50 @@ void KAPPanelBase::paint(Graphics& g)
 	//mouse over to change panel colors
 	if (isMouseOver()) {
 
-		const Colour hoverColour = Colour(Colours::black).withAlpha(0.4f);
-		
-		g.setColour(hoverColour);
-		g.fillAll();
+		const auto& glow_type = 0;
+		const float w = getWidth();		//panel width
+		const float h = getHeight();	//panel height
+		const float t = 1.0f;			//line thickness
+
+		switch (glow_type)
+		{
+			case(0): {
+
+				//Add glow around panels when mouse over
+				for (int i = 0; i < 4; i++) {
+
+					g.setColour(KAPColour_glow.withAlpha(1.0f - ((float)i * 0.2f)));
+					g.drawRoundedRectangle(i * t, i * t, getWidth() - 2 * i * t, getHeight() - 2 * i * t, 6.0 - i, t);
+				}
+
+			}break;
+
+
+			case(1): {
+			
+				//Add a rainbow glow border around the active panel
+				const Colour dColour[] = {
+					Colours::red,
+					Colours::orange,
+					Colours::yellow,
+					Colours::green,
+					Colours::blue,
+					Colours::purple
+				};
+
+				for (int i = 0; i < 6; i++) {
+
+					g.setColour(dColour[i]);
+					//g.setColour(Colour(256-10*i,256,256).withAlpha(0.1f*(float)i));
+					g.drawRoundedRectangle(i * t, i * t, getWidth() - 2 * i * t, getHeight() - 2 * i * t, 6.0 - i, t);
+				}
+
+			}break;
+
+		default:
+			break;
+		}
+
 	}
 
 

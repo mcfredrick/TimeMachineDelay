@@ -36,6 +36,7 @@ const Colour KAPColour_4 = Colour(0, 0, 0).withAlpha(0.6f);
 const Colour KAPColour_5 = Colour(105, 105, 105).withAlpha(0.3f);
 const Colour KAPColour_6 = Colour(0, 0, 0).withAlpha(0.8f);
 const Colour KAPColour_7 = Colour(125, 125, 125);
+const Colour KAPColour_glow = Colours::skyblue;
 
 const Font font_1("Helvetica Neue", 12.00f, Font::bold);
 const Font font_2("Helvetica Neue", 22.00f, Font::bold);
