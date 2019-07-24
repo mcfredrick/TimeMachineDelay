@@ -2,11 +2,11 @@
 
 About this project:
 
-This project is a work in progress. It is a chorus/delay effect plugin that can be used either as a standalone audio effect app or a VST3/AU plugin in any compatible DAW. New functionality will be added as it is developed. For some insight into the future of this app, check the [Project Board].(https://github.com/mcfredrick/Chorus-Flanger-Plugin/projects).
+This project is a work in progress. It is a chorus/delay effect plugin that can be used either as a standalone audio effect app or a VST3/AU plugin in any compatible DAW. New functionality will be added as it is developed. For some insight into the future of this app, check the [Project Board](https://github.com/mcfredrick/Chorus-Flanger-Plugin/project).
 
 Installation:
 
-1. Open the *.jucer file in the JUCE app. The JUCE app is available here: [Get Juce!](https://shop.juce.com/get-juce) A personal license is available for free.
+1. Open the *.jucer file in the JUCE app. The JUCE app is available here:  A personal license is available for free.
 
 2. Choose the appropriate exporter from the dropdown menu in JUCE. On windows this will likely be Visual Studio, Xcode on MacOSX. There are other options for exporter in JUCE and further documentation can be found on the JUCE website.
 
