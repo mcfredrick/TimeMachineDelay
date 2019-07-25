@@ -6,7 +6,7 @@ This project is a work in progress. It is a chorus/delay effect plugin that can 
 
 Installation:
 
-1. Open the *.jucer file in the JUCE app. The JUCE app is available here:  A personal license is available for free.
+1. Open the *.jucer file in the JUCE app. The JUCE app is available here:[Get Juce!](https://shop.juce.com/get-juce) A personal license is available for free.
 
 2. Choose the appropriate exporter from the dropdown menu in JUCE. On windows this will likely be Visual Studio, Xcode on MacOSX. There are other options for exporter in JUCE and further documentation can be found on the JUCE website.
 
