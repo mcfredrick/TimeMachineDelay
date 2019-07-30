@@ -31,6 +31,7 @@ void KAPVUMeter::paint(Graphics& g)
 {
 	const int meter_width = getParentWidth() / 5;
 
+	//set meter background color
 	g.setColour(KAPColour_6);
 	//left channel meter
 	g.fillRect(0, 0, meter_width, getHeight());
@@ -49,7 +50,8 @@ void KAPVUMeter::paint(Graphics& g)
 		ch0fill = 0;
 	}
 
-	g.setColour(KAPColour_7);
+	//set meter fill color
+	g.setColour(KAPColour_glow);
 	//left channel meter
 	g.fillRect(0, ch0fill, meter_width, getHeight());
 	//right channel meter

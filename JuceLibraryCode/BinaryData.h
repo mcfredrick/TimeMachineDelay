@@ -11,11 +11,14 @@ namespace BinaryData
     extern const char*   kadenze_bg_png;
     const int            kadenze_bg_pngSize = 124228;
 
+    extern const char*   whiteBG_png;
+    const int            whiteBG_pngSize = 14576;
+
     extern const char*   kadenze_knob_png;
     const int            kadenze_knob_pngSize = 56910;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 2;
+    const int namedResourceListSize = 3;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

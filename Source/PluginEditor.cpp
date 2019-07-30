@@ -32,8 +32,9 @@ NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewC
 	//set the default lookAndFeel for the program to the custom lookAndFeel
 	LookAndFeel::setDefaultLookAndFeel(mLookAndFeel);
 
-	mBackgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
-
+	//mBackgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
+	mBackgroundImage = ImageCache::getFromMemory(BinaryData::whiteBG_png, BinaryData::whiteBG_pngSize);
+	
 }
 
 NewChorusFlangerAudioProcessorEditor::~NewChorusFlangerAudioProcessorEditor()
