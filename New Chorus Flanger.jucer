@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="Szg5Om" name="New Chorus Flanger" projectType="audioplug"
-              jucerVersion="5.4.3">
+              jucerVersion="5.4.4">
   <MAINGROUP id="ugkw4V" name="New Chorus Flanger">
     <GROUP id="{8F7A34FA-FCC0-5634-A13F-E79B47F76CC5}" name="Components">
       <FILE id="mpIsT7" name="KAPVUMeter.cpp" compile="1" resource="0" file="Source/KAPVUMeter.cpp"/>
@@ -78,7 +78,7 @@
     </GROUP>
     <GROUP id="{8C7BE904-645E-A6C6-16A2-59D8748D733B}" name="Assets">
       <FILE id="CT3703" name="kadenze_bg.png" compile="0" resource="1" file="Assets/Assets/kadenze_bg.png"/>
-      <FILE id="uB0iGk" name="whiteBG.png" compile="0" resource="1" file="../Assets/Assets/whiteBG.png"/>
+      <FILE id="lCKx4x" name="whiteBG.png" compile="0" resource="1" file="Assets/Assets/whiteBG.png"/>
       <FILE id="dVrJRL" name="kadenze_knob.png" compile="0" resource="1"
             file="Assets/Assets/kadenze_knob.png"/>
     </GROUP>

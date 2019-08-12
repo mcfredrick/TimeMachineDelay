@@ -254,7 +254,8 @@ void NewChorusFlangerAudioProcessor::setStateInformation (const void* data, int 
 	
 	std::unique_ptr<XmlElement> xmlState;
 	//create an XML Element from the raw data passed
-	xmlState.reset(getXmlFromBinary(data, sizeInBytes));
+	//xmlState.reset(getXmlFromBinary(data, sizeInBytes));
+	xmlState = getXmlFromBinary(data, sizeInBytes);
 
 	//make sure the xmlState is not a nullptr and stop if it doesn't exist
 	if (xmlState) {
