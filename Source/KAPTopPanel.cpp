@@ -67,7 +67,7 @@ void KAPTopPanel::paint(Graphics& g)
 
 	const int label_w = 220;
 
-	g.drawFittedText("Chorus - Delay", TOP_PANEL_WIDTH-label_w-10, 0, label_w, getHeight(), Justification::centredRight, 1);
+	g.drawFittedText("Time Machine Delay", TOP_PANEL_WIDTH-label_w-10, 0, label_w, getHeight(), Justification::centredRight, 1);
 }
 
 void KAPTopPanel::buttonClicked(Button* b)
