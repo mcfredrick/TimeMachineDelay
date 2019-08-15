@@ -1,5 +1,7 @@
 # TimeMachineDelay
 
+![TMD Screen Shot](https://github.com/mcfredrick/TimeMachineDelay/blob/master/UIScreen.png)
+
 About this project:
 
 This project is a work in progress. It is a chorus/delay effect plugin that can be used either as a standalone audio effect app or a VST3/AU plugin in any compatible DAW. New functionality will be added as it is developed. For some insight into my plans for the future of this app, check the [Project Board](https://github.com/mcfredrick/Chorus-Flanger-Plugin/projects/1).
