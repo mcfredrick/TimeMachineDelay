@@ -136,3 +136,5 @@ Builds/VisualStudio2019/.vs/New Chorus Flanger/v16/ipch/AutoPCH/802b3d5bf48cbed3
 Builds/VisualStudio2019/.vs/New Chorus Flanger/v16/ipch/AutoPCH/3f20b73b9b7a341d/KAPAUDIOHELPERS.ipch
 Builds/VisualStudio2019/.vs/New Chorus Flanger/v16/ipch/AutoPCH/26420b55e8af6844/PLUGINPROCESSOR.ipch
 *.ipch
+*.obj
+*.tlog

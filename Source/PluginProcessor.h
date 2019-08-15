@@ -11,20 +11,20 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "KAPGain.h"
-#include "KAPDelay.h"
-#include "KAPLFO.h"
-#include "KAPPresetManager.h"
+#include "TMDGain.h"
+#include "TMDDelay.h"
+#include "TMDLFO.h"
+#include "TMDPresetManager.h"
 
 //==============================================================================
 /**
 */
-class NewChorusFlangerAudioProcessor  : public AudioProcessor
+class TimeMachineDelayAudioProcessor  : public AudioProcessor
 {
 public:
     //==============================================================================
-    NewChorusFlangerAudioProcessor();
-    ~NewChorusFlangerAudioProcessor();
+    TimeMachineDelayAudioProcessor();
+    ~TimeMachineDelayAudioProcessor();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -64,7 +64,7 @@ public:
 
 	AudioProcessorValueTreeState parameters;
 
-	KAPPresetManager* getPresetManager()
+	TMDPresetManager* getPresetManager()
 	{
 		return mPresetManager.get();
 	}
@@ -79,14 +79,14 @@ private:
 
 	AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
-	std::unique_ptr<KAPGain> mInputGain[2];
-	std::unique_ptr<KAPGain> mOutputGain[2];
-	std::unique_ptr<KAPDelay> mDelay[2];
-	std::unique_ptr<KAPLFO> mLFO[2];
+	std::unique_ptr<TMDGain> mInputGain[2];
+	std::unique_ptr<TMDGain> mOutputGain[2];
+	std::unique_ptr<TMDDelay> mDelay[2];
+	std::unique_ptr<TMDLFO> mLFO[2];
 
-	std::unique_ptr<KAPPresetManager> mPresetManager;
+	std::unique_ptr<TMDPresetManager> mPresetManager;
 
 	//JUCE's ScopedPointer Class uses std::unique_ptr<>
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewChorusFlangerAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TimeMachineDelayAudioProcessor)
 };

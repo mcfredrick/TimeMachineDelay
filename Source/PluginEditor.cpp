@@ -11,10 +11,10 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-#include "KAPLookAndFeel.h"
+#include "TMDLookAndFeel.h"
 
 //==============================================================================
-NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewChorusFlangerAudioProcessor& p)
+TimeMachineDelayAudioProcessorEditor::TimeMachineDelayAudioProcessorEditor (TimeMachineDelayAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -22,11 +22,11 @@ NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewC
     setSize (MAIN_PANEL_WIDTH,
 			 MAIN_PANEL_HEIGHT);
 
-	mMainPanel = new KAPMainPanel(&processor);
+	mMainPanel = new TMDMainPanel(&processor);
 	addAndMakeVisible(mMainPanel);
 	
 	//set the lookAndFeel for the editor
-	mLookAndFeel = new KAPLookAndFeel();
+	mLookAndFeel = new TMDLookAndFeel();
 	setLookAndFeel(mLookAndFeel);
 
 	//set the default lookAndFeel for the program to the custom lookAndFeel
@@ -37,18 +37,18 @@ NewChorusFlangerAudioProcessorEditor::NewChorusFlangerAudioProcessorEditor (NewC
 	
 }
 
-NewChorusFlangerAudioProcessorEditor::~NewChorusFlangerAudioProcessorEditor()
+TimeMachineDelayAudioProcessorEditor::~TimeMachineDelayAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void NewChorusFlangerAudioProcessorEditor::paint (Graphics& g)
+void TimeMachineDelayAudioProcessorEditor::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
 	g.drawImage(mBackgroundImage, getLocalBounds().toFloat());
 }
 
-void NewChorusFlangerAudioProcessorEditor::resized()
+void TimeMachineDelayAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..

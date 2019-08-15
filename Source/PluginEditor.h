@@ -13,17 +13,17 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
 
-#include "KAPMainPanel.h"
-#include "KAPLookAndFeel.h"
+#include "TMDMainPanel.h"
+#include "TMDLookAndFeel.h"
 
 //==============================================================================
 /**
 */
-class NewChorusFlangerAudioProcessorEditor  : public AudioProcessorEditor
+class TimeMachineDelayAudioProcessorEditor  : public AudioProcessorEditor
 {
 public:
-    NewChorusFlangerAudioProcessorEditor (NewChorusFlangerAudioProcessor&);
-    ~NewChorusFlangerAudioProcessorEditor();
+    TimeMachineDelayAudioProcessorEditor (TimeMachineDelayAudioProcessor&);
+    ~TimeMachineDelayAudioProcessorEditor();
 
     //==============================================================================
     void paint (Graphics&) override;
@@ -32,12 +32,12 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    NewChorusFlangerAudioProcessor& processor;
+    TimeMachineDelayAudioProcessor& processor;
 
-	ScopedPointer<KAPMainPanel> mMainPanel;
-	ScopedPointer<KAPLookAndFeel> mLookAndFeel;
+	ScopedPointer<TMDMainPanel> mMainPanel;
+	ScopedPointer<TMDLookAndFeel> mLookAndFeel;
 
 	Image mBackgroundImage;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewChorusFlangerAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TimeMachineDelayAudioProcessorEditor)
 };
