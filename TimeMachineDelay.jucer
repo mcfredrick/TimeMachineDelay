@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="Szg5Om" name="New Chorus Flanger" projectType="audioplug"
+              jucerVersion="5.4.4">
+  <MAINGROUP id="ugkw4V" name="New Chorus Flanger">
+    <GROUP id="{8F7A34FA-FCC0-5634-A13F-E79B47F76CC5}" name="Components">
+      <FILE id="rWzZFh" name="TMDVUMeter.cpp" compile="1" resource="0" file="Source/TMDVUMeter.cpp"/>
+      <FILE id="lzL2pw" name="TMDVUMeter.h" compile="0" resource="0" file="Source/TMDVUMeter.h"/>
+    </GROUP>
+    <GROUP id="{32C6BD33-AFB9-2B15-63A5-8BF59A6C3B68}" name="Managers">
+      <FILE id="tTxRkn" name="TMDPresetManager.cpp" compile="1" resource="0"
+            file="Source/TMDPresetManager.cpp"/>
+      <FILE id="t0lJrZ" name="TMDPresetManager.h" compile="0" resource="0"
+            file="Source/TMDPresetManager.h"/>
+    </GROUP>
+    <GROUP id="{427CDAFD-3D29-FFFC-7F23-277289D46009}" name="Parameter Control">
+      <FILE id="zPWMmz" name="TMDParameterComboBox.cpp" compile="1" resource="0"
+            file="Source/TMDParameterComboBox.cpp"/>
+      <FILE id="p3L8xW" name="TMDParameterComboBox.h" compile="0" resource="0"
+            file="Source/TMDParameterComboBox.h"/>
+      <FILE id="z3ydEO" name="TMDParameterSlider.cpp" compile="1" resource="0"
+            file="Source/TMDParameterSlider.cpp"/>
+      <FILE id="jLnQNm" name="TMDParameterSlider.h" compile="0" resource="0"
+            file="Source/TMDParameterSlider.h"/>
+    </GROUP>
+    <GROUP id="{EDE2B063-7A9F-7751-E921-ECDA2C4FB25F}" name="Panels">
+      <FILE id="cs811P" name="TMDCenterPanel.cpp" compile="1" resource="0"
+            file="Source/TMDCenterPanel.cpp"/>
+      <FILE id="ISulM7" name="TMDCenterPanel.h" compile="0" resource="0"
+            file="Source/TMDCenterPanel.h"/>
+      <FILE id="hXEhK6" name="TMDCenterPanelMenuBar.cpp" compile="1" resource="0"
+            file="Source/TMDCenterPanelMenuBar.cpp"/>
+      <FILE id="asdAX5" name="TMDCenterPanelMenuBar.h" compile="0" resource="0"
+            file="Source/TMDCenterPanelMenuBar.h"/>
+      <FILE id="GBdA3H" name="TMDEffectsPanel.cpp" compile="1" resource="0"
+            file="Source/TMDEffectsPanel.cpp"/>
+      <FILE id="IILDjV" name="TMDEffectsPanel.h" compile="0" resource="0"
+            file="Source/TMDEffectsPanel.h"/>
+      <FILE id="STUgvY" name="TMDGainPanel.cpp" compile="1" resource="0"
+            file="Source/TMDGainPanel.cpp"/>
+      <FILE id="gBvbEm" name="TMDGainPanel.h" compile="0" resource="0" file="Source/TMDGainPanel.h"/>
+      <FILE id="u6y88R" name="TMDMainPanel.cpp" compile="1" resource="0"
+            file="Source/TMDMainPanel.cpp"/>
+      <FILE id="AnD2LD" name="TMDMainPanel.h" compile="0" resource="0" file="Source/TMDMainPanel.h"/>
+      <FILE id="PM9fH9" name="TMDPanelBase.cpp" compile="1" resource="0"
+            file="Source/TMDPanelBase.cpp"/>
+      <FILE id="s1GuRv" name="TMDPanelBase.h" compile="0" resource="0" file="Source/TMDPanelBase.h"/>
+      <FILE id="thCMN8" name="TMDTopPanel.cpp" compile="1" resource="0" file="Source/TMDTopPanel.cpp"/>
+      <FILE id="HydiI9" name="TMDTopPanel.h" compile="0" resource="0" file="Source/TMDTopPanel.h"/>
+    </GROUP>
+    <GROUP id="{35F7536D-5420-FC51-43A4-5BD4B8832F5E}" name="Helpers">
+      <FILE id="wbMxuR" name="TMDAudioHelpers.h" compile="0" resource="0"
+            file="Source/TMDAudioHelpers.h"/>
+      <FILE id="HKX2mA" name="TMDHelperFunctions.h" compile="0" resource="0"
+            file="Source/TMDHelperFunctions.h"/>
+      <FILE id="H6mORk" name="TMDInterfaceDefines.h" compile="0" resource="0"
+            file="Source/TMDInterfaceDefines.h"/>
+      <FILE id="ExPvph" name="TMDLookAndFeel.h" compile="0" resource="0"
+            file="Source/TMDLookAndFeel.h"/>
+      <FILE id="MpTY0r" name="TMDParameters.h" compile="0" resource="0" file="Source/TMDParameters.h"/>
+    </GROUP>
+    <GROUP id="{B33AD5E7-D5F3-77A5-82DB-812F66CDE81F}" name="DSP">
+      <FILE id="E1n3DH" name="TMDDelay.cpp" compile="1" resource="0" file="Source/TMDDelay.cpp"/>
+      <FILE id="iFg31X" name="TMDDelay.h" compile="0" resource="0" file="Source/TMDDelay.h"/>
+      <FILE id="scaefk" name="TMDGain.cpp" compile="1" resource="0" file="Source/TMDGain.cpp"/>
+      <FILE id="lZx36i" name="TMDGain.h" compile="0" resource="0" file="Source/TMDGain.h"/>
+      <FILE id="m4nPP4" name="TMDLFO.cpp" compile="1" resource="0" file="Source/TMDLFO.cpp"/>
+      <FILE id="cJw0ek" name="TMDLFO.h" compile="0" resource="0" file="Source/TMDLFO.h"/>
+    </GROUP>
+    <GROUP id="{03E635C3-A4B5-F45C-18A1-E5287FC099AB}" name="Source">
+      <FILE id="r7RSfy" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="p6huq9" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="KEziSG" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="ipU8xV" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{8C7BE904-645E-A6C6-16A2-59D8748D733B}" name="Assets">
+      <FILE id="lCKx4x" name="white_background.png" compile="0" resource="1"
+            file="Assets/Assets/white_background.png"/>
+      <FILE id="dVrJRL" name="white_knob.png" compile="0" resource="1" file="Assets/Assets/white_knob.png"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../JUCE/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../../JUCE/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl"/>
+        <MODULEPATH id="juce_gui_extra"/>
+        <MODULEPATH id="juce_gui_basics"/>
+        <MODULEPATH id="juce_graphics"/>
+        <MODULEPATH id="juce_events"/>
+        <MODULEPATH id="juce_data_structures"/>
+        <MODULEPATH id="juce_cryptography"/>
+        <MODULEPATH id="juce_core"/>
+        <MODULEPATH id="juce_audio_utils"/>
+        <MODULEPATH id="juce_audio_processors"/>
+        <MODULEPATH id="juce_audio_plugin_client"/>
+        <MODULEPATH id="juce_audio_formats"/>
+        <MODULEPATH id="juce_audio_devices"/>
+        <MODULEPATH id="juce_audio_basics"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>

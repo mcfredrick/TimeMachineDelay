@@ -326,13 +326,13 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "TimeMachineDelay"
+ #define JucePlugin_Name                   "New Chorus Flanger"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "TimeMachineDelay"
+ #define JucePlugin_Desc                   "New Chorus Flanger"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "mcfredrick"
+ #define JucePlugin_Manufacturer           "yourcompany"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
  #define JucePlugin_ManufacturerWebsite    ""
@@ -386,16 +386,16 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         TimeMachineDelayAU
+ #define JucePlugin_AUExportPrefix         NewChorusFlangerAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "TimeMachineDelayAU"
+ #define JucePlugin_AUExportPrefixQuoted   "NewChorusFlangerAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.mcfredrick.TimeMachineDelay
+ #define JucePlugin_CFBundleIdentifier     com.yourcompany.NewChorusFlanger
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           0
@@ -413,7 +413,7 @@
  #define JucePlugin_RTASDisableMultiMono   0
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.mcfredrick.TimeMachineDelay
+ #define JucePlugin_AAXIdentifier          com.yourcompany.NewChorusFlanger
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -437,7 +437,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "mcfredrick: TimeMachineDelay"
+ #define JucePlugin_IAAName                "yourcompany: New Chorus Flanger"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16
