@@ -33,7 +33,7 @@ TimeMachineDelayAudioProcessorEditor::TimeMachineDelayAudioProcessorEditor (Time
 	LookAndFeel::setDefaultLookAndFeel(mLookAndFeel);
 
 	//mBackgroundImage = ImageCache::getFromMemory(BinaryData::kadenze_bg_png, BinaryData::kadenze_bg_pngSize);
-	mBackgroundImage = ImageCache::getFromMemory(BinaryData::whiteBG_png, BinaryData::whiteBG_pngSize);
+	mBackgroundImage = ImageCache::getFromMemory(BinaryData::white_background_png, BinaryData::white_background_pngSize);
 	
 }
 

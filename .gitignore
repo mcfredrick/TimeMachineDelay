@@ -138,3 +138,28 @@ Builds/VisualStudio2019/.vs/New Chorus Flanger/v16/ipch/AutoPCH/26420b55e8af6844
 *.ipch
 *.obj
 *.tlog
+*.pdb
+*.log
+*.lib
+*.exp
+*.res
+*.filters
+*.vcxproj
+*.db-wal
+*.db-shm
+*.db
+*.opendb
+*.xcsettings
+*.pbxproj
+*.entitlements
+Builds/VisualStudio2019/x64/Release/VST3/TimeMachineDelay_VST3.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/x64/Release/VST3/TimeMachineDelay.vst3
+Builds/VisualStudio2019/x64/Release/VST3/New Chorus Flanger_VST3.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/x64/Release/Standalone Plugin/TimeMachineDelay_StandalonePlugin.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/x64/Release/Standalone Plugin/TimeMachineDelay.exe
+Builds/VisualStudio2019/x64/Release/Standalone Plugin/New Chorus Flanger_StandalonePlugin.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/x64/Release/Shared Code/TimeMachineDelay_SharedCode.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/x64/Release/Shared Code/New Chorus Flanger_SharedCode.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2019/TimeMachineDelay.sln
+Builds/VisualStudio2019/.vs/TimeMachineDelay/v16/.suo
+Builds/LinuxMakefile/Makefile

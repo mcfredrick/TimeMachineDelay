@@ -326,19 +326,19 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "New Chorus Flanger"
+ #define JucePlugin_Name                   "TimeMachineDelay"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "New Chorus Flanger"
+ #define JucePlugin_Desc                   "TimeMachineDelay"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "yourcompany"
+ #define JucePlugin_Manufacturer           "mcfredrick"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
- #define JucePlugin_ManufacturerWebsite    ""
+ #define JucePlugin_ManufacturerWebsite    "mcfredrick.github.io"
 #endif
 #ifndef  JucePlugin_ManufacturerEmail
- #define JucePlugin_ManufacturerEmail      ""
+ #define JucePlugin_ManufacturerEmail      "mattcfredrick@gmail.com"
 #endif
 #ifndef  JucePlugin_ManufacturerCode
  #define JucePlugin_ManufacturerCode       0x4d616e75 // 'Manu'
@@ -377,7 +377,7 @@
  #define JucePlugin_VSTCategory            kPlugCategEffect
 #endif
 #ifndef  JucePlugin_Vst3Category
- #define JucePlugin_Vst3Category           "Fx"
+ #define JucePlugin_Vst3Category           "Fx|Delay"
 #endif
 #ifndef  JucePlugin_AUMainType
  #define JucePlugin_AUMainType             'aufx'
@@ -386,16 +386,16 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         NewChorusFlangerAU
+ #define JucePlugin_AUExportPrefix         TimeMachineDelayAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "NewChorusFlangerAU"
+ #define JucePlugin_AUExportPrefixQuoted   "TimeMachineDelayAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.yourcompany.NewChorusFlanger
+ #define JucePlugin_CFBundleIdentifier     com.mcfredrick.TimeMachineDelay
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           0
@@ -413,7 +413,7 @@
  #define JucePlugin_RTASDisableMultiMono   0
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.yourcompany.NewChorusFlanger
+ #define JucePlugin_AAXIdentifier          com.mcfredrick.TimeMachineDelay
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -437,7 +437,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "yourcompany: New Chorus Flanger"
+ #define JucePlugin_IAAName                "mcfredrick: TimeMachineDelay"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16

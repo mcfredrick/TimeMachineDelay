@@ -22,7 +22,7 @@ public:
 	{
 
 		//image assets
-		mSliderImage = ImageCache::getFromMemory(BinaryData::kadenze_knob_png, BinaryData::kadenze_knob_pngSize);
+		mSliderImage = ImageCache::getFromMemory(BinaryData::white_knob_png, BinaryData::white_knob_pngSize);
 		
 		//comboBox colours
 		setColour(ComboBox::backgroundColourId, TMDColour_3);
