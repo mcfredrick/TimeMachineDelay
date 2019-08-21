@@ -18,7 +18,7 @@ Note: This project is built with the JUCE framework.
 
 1. Clone this repository.
 
-1. Open the TimeMachineDelay.jucer file from the root directory in the JUCE app. The JUCE app is available here:[Get Juce!](https://shop.juce.com/get-juce) A personal license is available for free.
+1. Open the TimeMachineDelay.jucer file from the root directory in the JUCE app. The JUCE app is available here: [Get Juce!](https://shop.juce.com/get-juce) A personal license is available for free.
 
 1. Choose the appropriate exporter from the dropdown menu in JUCE. On windows this will likely be Visual Studio, Xcode on MacOSX. There are other options for exporter in JUCE and further documentation can be found on the JUCE website.
 
