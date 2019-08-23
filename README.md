@@ -8,7 +8,7 @@ This project is a work in progress. It is a chorus/delay effect plugin that can 
 
 ## Installation:
 
-If you would like to check out the current Windows build of the VST3 and standalone executable, simply download the "Current Builds" folder and follow the instructions in the provided README.txt.
+If you would like to check out the current Windows build of the VST3 and standalone executable, simply download the TimeMachineDelay.exe and/or the TimeMachineDelay.vst3 file(s) from the "Current Builds" folder and follow the instructions in the provided README.txt.
 
 Alternatively, if you'd like to work with the source code, continue reading.
 
